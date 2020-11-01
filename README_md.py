@@ -1,4 +1,6 @@
-## lesson1
+## 第一次作业
+./python_practice
 
-a = 1
-print(a)
+
+
+
