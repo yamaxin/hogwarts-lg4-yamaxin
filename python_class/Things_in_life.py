@@ -1,7 +1,7 @@
 # 定义life类
 class Life:
     animal = 'cat'
-    flower = 'F4'
+    flower = 'F'
 
     def fav_book(self):
         book = 'Gone with the wind'
