@@ -16,4 +16,12 @@ class Testupper(unittest.TestCase):
             s.split(2)
 
 if __name__ == '__main__':
-    unittest.main()
+    # unittest.main()
+    # suite = unittest.TestSuite()
+    # suite.addTest(Testupper('test_isupper'))
+    # unittest.TextTestRunner().run(suite)
+
+
+    suite=unittest.TestLoader().loadTestsFromTestCase(Testupper)
+    st=unittest.TestSuite(suite)
+    unittest.TextTestRunner(verbosity=2).run(st)
