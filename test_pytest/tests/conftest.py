@@ -1,3 +1,5 @@
+# 自动导入fixture
+
 import pytest
 from test_pytest.core.calc import Calc
 
@@ -5,3 +7,4 @@ from test_pytest.core.calc import Calc
 def calc_init():
     print('setup_class')
     return Calc()
+

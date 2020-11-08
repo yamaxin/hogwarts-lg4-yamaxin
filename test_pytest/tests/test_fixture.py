@@ -1,4 +1,4 @@
-from test_pytest.tests.fixtures import calc_init
+# from test_pytest.tests.fixtures import calc_init
 
 
 def test_calc_demo(calc_init):
