@@ -4,7 +4,14 @@ import allure
 
 
 class TestCalc:
+    # 类初始化，会优先执行，会override实例
+    # @classmethod
+    # def setup_class(cls):
+    #     print('setup_class method')
+
+    # 最常用的类初始化方法
     def setup_class(self):
+        print('setup_class')
         self.calc = Calc()
 
     def setUp(self):
@@ -24,14 +31,22 @@ class TestCalc:
         (0.4, 2, 0.8),
     ])
     def test_mul(self,a,b,c):
+        # 记录关键参数
         self.simple_step(f'{a},{b},{c}')
+        # 追加截图
+        allure.attach.file(
+            '/Users/yamaxin/python_project/hogwarts-lg4-yamaxin/test_pytest/resource/photo.jpg',
+            ' 测试访谈',
+            attachment_type=allure.attachment_type.JPG
+        )
         # 测试乘法正确性
         assert self.calc.mul(a,b) == c
+
 
     @pytest.mark.parametrize('a,b,c', [
         (2.03, 100, 203)
     ])
-    def test_mul(self, a, b, c):
+    def test_mul_float(self, a, b, c):
         # 测试浮点数相乘
         assert round(self.calc.mul(a, b)) == c
 
