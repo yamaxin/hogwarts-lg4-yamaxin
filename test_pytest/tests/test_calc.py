@@ -1,10 +1,18 @@
 from test_pytest.core.calc import Calc
 import pytest
+import allure
 
 
 class TestCalc:
     def setup_class(self):
         self.calc = Calc()
+
+    def setUp(self):
+        pass
+
+    @allure.step
+    def simple_step(self,step_param1, step_param2=None):
+        pass
 
     @pytest.mark.parametrize('a,b,c', [
         (1, 2, 2),
@@ -16,6 +24,7 @@ class TestCalc:
         (0.4, 2, 0.8),
     ])
     def test_mul(self,a,b,c):
+        self.simple_step(f'{a},{b},{c}')
         # 测试乘法正确性
         assert self.calc.mul(a,b) == c
 
