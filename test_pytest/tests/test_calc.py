@@ -4,7 +4,7 @@ import allure
 
 
 class TestCalc:
-    # 类初始化，会优先执行，会override实例
+    # 类初始化，会优先执行，会override实例方法
     # @classmethod
     # def setup_class(cls):
     #     print('setup_class method')
