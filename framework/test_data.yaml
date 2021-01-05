@@ -1,0 +1,25 @@
+data:
+#  - appium
+  keyword: [appium, selenium]
+
+#  - 'selenium'
+#  - requests
+#  - 测试开发
+#  - 性能测试
+
+steps:
+  - webdriver:
+      browser: chrome
+  - get: https://ceshiren.com
+  - find_element:
+      - id
+      - search-button
+  - click: []
+  - find_element: [id, search-term]
+  - send_keys: ${data}
+  - find_element: [css, '.topic .first-line']
+  - get_attribute: text
+  - var: {element_text: '${return}'}
+  - assert_in: ['${data}', '${element_text}']
+
+
